@@ -1,0 +1,21 @@
+Package: mcpa
+Type: Package
+Title: Intuitive power analyses through monte carlo simulations
+Version: 0.1.0
+Authors@R: person("Julian", "Jara-Ettinger", email = "julian.jara-ettinger@yale.edu",
+    role = c("auth", "cre"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+URL: http://MISING
+BugReports: http://MISSING
+Imports:
+    ggplot2 (>= 2.2.1),
+    progress (>= 1.1.2),
+    PropCIs (>= 0.2-5),
+    dplyr (>= 0.7.2),
+    broom (>= 0.4.2)
+RoxygenNote: 6.0.1
