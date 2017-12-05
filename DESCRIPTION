@@ -10,8 +10,8 @@ Description: More about what it does (maybe more than one line)
 License: MIT
 Encoding: UTF-8
 LazyData: true
-URL: http://MISING
-BugReports: http://MISSING
+URL: http://github.com/julianje/mcpa
+BugReports: http://github.com/julianje/mcpa
 Imports:
     ggplot2 (>= 2.2.1),
     progress (>= 1.1.2),
