@@ -46,7 +46,9 @@ lm.explore <- function(lmodel, lown, topn, r = 10000, alpha = 0.05, conf.level =
   #' library(datasets)
   #' Model <- lm(mpg ~ hp + vs, data = mtcars)
   #' lm.pow(n=16, Model)
-  if (any(is.na(n) | (n < 0))) stop("'n' must be a nonnegative integer")
+  if (any(is.na(lown) | (lown < 0))) stop("'lown' must be a nonnegative integer")
+  if (any(is.na(topn) | (topn < 0))) stop("'lown' must be a nonnegative integer")
+  if (topn <= lown) stop("topn must be greater than lown")
   if (any(is.na(r) | (r < 0))) stop("'r' must be nonnegative and integer")
   PilotData <-lmodel$model
   pb <- progress_bar$new(
