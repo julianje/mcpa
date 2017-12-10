@@ -40,7 +40,17 @@ chisq.pow <- function(x, y = NULL, n, r = 10000, alpha = 0.05, conf.level = 0.95
 }
 
 chisq.explore <- function(x, y = NULL, lown, topn, r = 10000, alpha = 0.05, conf.level = 0.95, plotit = TRUE){
-  if (any(is.na(n) | (n < 0))) stop("'n' must be a nonnegative integer")
+  #' Compute the power using a chi-squared test by bootstrapping pilot data.
+  #'
+  #' \code{chisq.pexplore} computes (via simulation) the power of an experiment that will be analyzed using a chi-square test using a range of potential sample sizes.
+  #'
+  #' @inherit chisq.pow
+  #' @param lown smallest sample size to test.
+  #' @param topn largest sample size to test.
+  #' @examples
+  #' chisq.explore(c(0.5,0.25,0.25),lown=18,topn=20,r=500)
+  if (any(is.na(lown) | (lown < 0))) stop("'lown' must be a nonnegative integer")
+  if (any(is.na(topn) | (topn < 0))) stop("'topn' must be a nonnegative integer")
   if (any(is.na(r) | (r < 0))) stop("'r' must be nonnegative and integer")
   if (any(is.na(alpha) | (alpha < 0) | (alpha > 1))) stop("'alpha' must be between 0 and 1")
   if (any(is.na(conf.level) | (conf.level < 0) | (conf.level > 1))) stop("'alpha' must be between 0 and 1")
