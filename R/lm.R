@@ -71,7 +71,8 @@ lm.explore <- function(lmodel, lown, topn, r = 10000, alpha = 0.05, conf.level =
   results <- do.call(rbind,lapply(lown:topn,function(x){return(GetLmPower(x))}))
   message(paste("Power estimate using",r,"samples."))
   if (plotit){
-    return(ggplot(results, aes(x=samplesize, y=power,color=variable,group=variable))+geom_point()+geom_line()+geom_errorbar(aes(ymin=LowCI,ymax=TopCI))+theme_bw())
+    return(ggplot(results, aes(x=samplesize, y=power,color=variable,group=variable))+geom_point()+geom_line()+geom_errorbar(aes(ymin=LowCI,ymax=TopCI))+theme_bw())+
+    scale_x_discrete("sample size")
   } else{
     return(results)
   }
